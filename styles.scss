@@ -1,0 +1,57 @@
+@import '~@angular/material/theming';
+@import './app/ng-select-theme';
+
+@include mat-core();
+$primary: mat-palette($mat-purple, 700);
+$accent: mat-palette($mat-deep-orange, 600, A100, A400);
+$warn: mat-palette($mat-red, 600);
+$theme: mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($theme);
+@include ng-select-theme($theme);
+my-app {
+  padding: 20px;
+  display: block;
+}
+
+mat-form-field, ng-select{
+  width: 100%;
+}
+
+.purple{
+    $primary: mat-palette($mat-purple, 700);
+    $accent: mat-palette($mat-deep-orange, 600, A100, A400);
+    $warn: mat-palette($mat-red, 600);
+    $theme: mat-light-theme($primary, $accent, $warn);
+
+    @include angular-material-theme($theme);
+    @include ng-select-theme($theme);
+    $foreground: map-get($theme, foreground);
+    color: mat-color($foreground, text, .7);
+}
+.blue{
+    $primary: mat-palette($mat-blue, 700);
+    $accent: mat-palette($mat-deep-orange, 600, A100, A400);
+    $warn: mat-palette($mat-red, 600);
+    $theme: mat-light-theme($primary, $accent, $warn);
+
+    @include angular-material-theme($theme);
+    @include ng-select-theme($theme);  
+    $foreground: map-get($theme, foreground);
+    color: mat-color($foreground, text, .7);
+}
+
+.dark{
+    $primary: mat-palette($mat-yellow, 700);
+    $accent: mat-palette($mat-deep-orange, 600, A100, A400);
+    $warn: mat-palette($mat-red, 600);
+    $theme: mat-dark-theme($primary, $accent, $warn);
+
+    @include angular-material-theme($theme);
+    @include ng-select-theme($theme);  
+    $foreground: map-get($theme, foreground);
+    color: mat-color($foreground, text, .7);
+}
+ my-app.dark{
+    background: #303030; 
+ }
